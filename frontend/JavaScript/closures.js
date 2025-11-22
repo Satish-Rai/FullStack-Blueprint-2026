@@ -2,12 +2,11 @@ const getFakeDataList = async () => {
   try {
     const response = await fetch("https://jsonplaceholder.typicode.com/todos");
     const data = await response.json();
-    const slicedData = data.slice(0, 4);
-
-    console.log("res", slicedData);
+    return data.slice(0, 4);
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 
-getFakeDataList();
+console.log("res", getFakeDataList());
